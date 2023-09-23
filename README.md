@@ -12,13 +12,13 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 <br /><br />
 
 ## Who's on your team?
-*List the full names,  email address & Github username of your teammates*
+*List the full names, email address & Github username of your teammates*
 
-1.   **Full Name**  || **fullname@company.com**  (or fullname@school.edu if you're a CS student) || **Github Username**
-2. 
-3.
-4.
-5.
+1.   **Brandon Lacy**  || **brandon.lacy@kiewit.com** || **Cyber1551**
+2.   **Justin Morrow**  || **brandon.lacy@kiewit.com** || **Cyber1551**
+3.   **Jordon Trujillo**  || **brandon.lacy@kiewit.com** || **Cyber1551**
+4.   **Aruvel **  || **brandon.lacy@kiewit.com** || **Cyber1551**
+5.   **Ravi Dixit**  || **brandon.lacy@kiewit.com** || **Cyber1551**
 
 <br /><br />
 
@@ -34,12 +34,12 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 
 ## What challenges are you building for? SELECT ALL THAT APPLY
 *See hackmidwest.com/#prizes for challenge details*
-- [ ]  Pinata Web3 Challenge
-- [ ]  Pinata Challenge
+- [X]  Pinata Web3 Challenge
+- [X]  Pinata Challenge
 - [ ]  Pinata ERC-6551 Challenge
-- [ ]  Okta Challenge
+- [X]  Okta Challenge
 - [ ]  GEHA Generative AI Emergency Response Challenge
-- [ ]  Corporate Challenge (only for official company teams)
+- [X]  Corporate Challenge (only for official company teams)
 - [ ]  College Challenge (only for teams of up to 5 CS students from the same school)
 
 <br /><br />
