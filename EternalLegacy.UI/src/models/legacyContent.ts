@@ -1,6 +1,6 @@
 import { DateType } from "./dateType";
 
-export interface LegacyContent {
+export interface ILegacyContent {
   legacyContentId: number;
   legacyId: number;
   order: number;

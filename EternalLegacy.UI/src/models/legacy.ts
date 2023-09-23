@@ -1,8 +1,8 @@
 import { LegacyType } from "./legacyType";
 
-export interface Legacy {
+export interface ILegacy {
   legacyId: number;
   legacyType: LegacyType;
-  openDate: Date;
+  openDate?: Date;
   published: boolean;
 }
