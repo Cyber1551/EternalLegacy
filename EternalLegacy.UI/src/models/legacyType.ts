@@ -1,5 +1,5 @@
 export enum LegacyType {
-  Presetation = 1,
+  Presentation = 1,
   TimeCapsule = 2,
   Memorium = 3,
 }
