@@ -12,11 +12,18 @@ export const mockUser: IUser = {
   userEmail: "Justin.Morrow@kiewit.com",
 };
 
-export const mockLegacy: ILegacy = {
-  legacyId: 1,
-  legacyType: LegacyType.Presentation,
-  published: true,
-};
+export const mockLegacies: Array<ILegacy> = [
+  {
+    legacyId: 1,
+    legacyType: LegacyType.Presentation,
+    published: true,
+  },
+  {
+    legacyId: 2,
+    legacyType: LegacyType.Memorium,
+    published: false,
+  },
+];
 
 export const mockUserRole: IUserRole = {
   userRoleId: 1,

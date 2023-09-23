@@ -1,23 +1,28 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */ //REMOVE AFTER IMPLEMENTATION
-import axios from "axios";
-import { mockLegacy, mockLegacyContent1, mockLegacyContent2 } from "./mockData";
+import {
+  mockLegacies,
+  mockLegacyContent1,
+  mockLegacyContent2,
+} from "./mockData";
 import { ILegacy } from "../models/legacy";
 import { ILegacyContent } from "../models/legacyContent";
 
 // LEGACY -------------------------------
-export const getLegacies = async (userId: number): Promise<ILegacy> => {
+export const getLegacies = async (
+  userEmail: string
+): Promise<Array<ILegacy>> => {
   // return axios.get('URL HERE');
-  return mockLegacy;
+  return mockLegacies;
 };
 
 export const createLegacy = async (legacy: ILegacy): Promise<ILegacy> => {
   // actual axios
-  return mockLegacy;
+  return mockLegacies[0];
 };
 
 export const updateLegacy = async (legacy: ILegacy): Promise<ILegacy> => {
   // actual axios
-  return mockLegacy;
+  return mockLegacies[0];
 };
 
 export const removeLegacy = async (legacyId: number): Promise<boolean> => {
