@@ -15,10 +15,10 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 *List the full names, email address & Github username of your teammates*
 
 1.   **Brandon Lacy**  || **brandon.lacy@kiewit.com** || **Cyber1551**
-2.   **Justin Morrow**  || **brandon.lacy@kiewit.com** || **Cyber1551**
+2.   **Justin Morrow**  || **justin.morrow@kiewit.com** || **Cyber1551**
 3.   **Jordon Trujillo**  || **brandon.lacy@kiewit.com** || **Cyber1551**
-4.   **Aruvel **  || **brandon.lacy@kiewit.com** || **Cyber1551**
-5.   **Ravi Dixit**  || **brandon.lacy@kiewit.com** || **Cyber1551**
+4.   **Aruvel Kumarasamy **  || **arulvel.kumarasamy@kiewit.com** || **Cyber1551**
+5.   **Ravi Dixit**  || **ravi.dixit@kiewit.com** || **rvdxt**
 
 <br /><br />
 
