@@ -13,6 +13,7 @@ import LoadingComponent from "./components/LoadingComponent";
 import NotFoundScreen from "./screens/NotFoundScreen/NotFoundScreen.tsx";
 import DashboardScreen from "./screens/DashboardScreen";
 import LandingScreen from "./screens/LandingScreen";
+import LegacyPreviewScreen from "./screens/LegacyPreviewScreen/LegacyPreviewScreen.tsx";
 
 const App = () => {
     const {isLoading, error, isAuthenticated} = useAuth0();
@@ -34,6 +35,10 @@ const App = () => {
             element: isAuthenticated ? <DashboardScreen /> : <LandingScreen />,
         },
         {
+            path: "/:id",
+            element: <LegacyPreviewScreen />
+        },
+        {
             path: "*",
             element: <NotFoundScreen />
         }
@@ -42,7 +47,9 @@ const App = () => {
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
                 <NavBarComponent />
-                <RouterProvider router={router}/>
+                <div className={'contentWrapper'}>
+                    <RouterProvider router={router}/>
+                </div>
             </MantineProvider>
         </ColorSchemeProvider>
     );
