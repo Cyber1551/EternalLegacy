@@ -42,7 +42,9 @@ const App = () => {
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
                 <NavBarComponent />
-                <RouterProvider router={router}/>
+                <div className={'contentWrapper'}>
+                    <RouterProvider router={router}/>
+                </div>
             </MantineProvider>
         </ColorSchemeProvider>
     );
