@@ -29,8 +29,8 @@ export const mockLegacyContent1: ILegacyContent = {
   legacyContentId: 1,
   legacyId: 1,
   order: 1,
-  contentID: "content ID for 1 here",
-  caption: "Caption 1 here",
+  contentID: "QmXPxfPrAnfFgVYQAd9gEUroNLEWny53UMVMDaAi5DU5VG",
+  caption: "He looks mad",
   date: new Date("2023-08-25T11:00:00"),
   dateType: DateType.date,
 };
@@ -39,8 +39,8 @@ export const mockLegacyContent2: ILegacyContent = {
   legacyContentId: 2,
   legacyId: 1,
   order: 2,
-  contentID: "content ID for 2 here",
-  caption: "Caption 2 here",
+  contentID: "QmdmK7UWhoRFP5Aq9wu92gH4bmUvY6AR7T9ivjHWKwNsiD",
+  caption: "Yikes look at those lines",
   date: new Date("2023-09-25T11:00:00"),
   dateType: DateType.time,
 };
