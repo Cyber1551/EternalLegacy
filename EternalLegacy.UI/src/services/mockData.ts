@@ -15,11 +15,13 @@ export const mockUser: IUser = {
 export const mockLegacies: Array<ILegacy> = [
   {
     legacyId: 1,
+    name: "legacy with content",
     legacyType: LegacyType.Presentation,
     published: true,
   },
   {
     legacyId: 2,
+    name: "legacy without content",
     legacyType: LegacyType.Memorium,
     published: false,
   },
