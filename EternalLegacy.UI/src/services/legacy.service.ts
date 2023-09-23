@@ -15,6 +15,14 @@ export const getLegacies = async (
   return mockLegacies;
 };
 
+export const getLegacyById = async (
+    legacyId: number
+): Promise<ILegacy | undefined> => {
+  // return axios.get('URL HERE');
+  return mockLegacies.find(x => x.legacyId === legacyId)
+};
+
+
 export const createLegacy = async (legacy: ILegacy): Promise<ILegacy> => {
   // actual axios
   return mockLegacies[0];

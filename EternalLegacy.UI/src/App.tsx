@@ -13,6 +13,7 @@ import LoadingComponent from "./components/LoadingComponent";
 import NotFoundScreen from "./screens/NotFoundScreen/NotFoundScreen.tsx";
 import DashboardScreen from "./screens/DashboardScreen";
 import LandingScreen from "./screens/LandingScreen";
+import LegacyPreviewScreen from "./screens/LegacyPreviewScreen/LegacyPreviewScreen.tsx";
 
 const App = () => {
     const {isLoading, error, isAuthenticated} = useAuth0();
@@ -32,6 +33,10 @@ const App = () => {
         {
             path: "/",
             element: isAuthenticated ? <DashboardScreen /> : <LandingScreen />,
+        },
+        {
+            path: "/:id",
+            element: <LegacyPreviewScreen />
         },
         {
             path: "*",
