@@ -1,6 +1,6 @@
 import { RoleType } from "./roleType";
 
-export interface UserRole {
+export interface IUserRole {
   userRoleId: number;
   userId: number;
   legacyId: number;
