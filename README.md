@@ -17,7 +17,7 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 1.   **Brandon Lacy**  || **brandon.lacy@kiewit.com** || **Cyber1551**
 2.   **Justin Morrow**  || **justin.morrow@kiewit.com** || **Cyber1551**
 3.   **Jordon Trujillo**  || **brandon.lacy@kiewit.com** || **Cyber1551**
-4.   **Aruvel Kumarasamy **  || **arulvel.kumarasamy@kiewit.com** || **Cyber1551**
+4.   **Aruvel Kumarasamy **  || **arulvel.kumarasamy@kiewit.com** || **arulvelkumarasamy**
 5.   **Ravi Dixit**  || **ravi.dixit@kiewit.com** || **rvdxt**
 
 <br /><br />
