@@ -1,3 +1,5 @@
+import { DateType } from "./dateType";
+
 export interface LegacyContent {
   legacyContentId: number;
   legacyId: number;
@@ -5,5 +7,5 @@ export interface LegacyContent {
   contentID: string;
   caption: string;
   date: Date;
-  dateSelection: string;
+  dateType: DateType;
 }

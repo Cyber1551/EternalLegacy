@@ -1,6 +1,8 @@
+import { LegacyType } from "./legacyType";
+
 export interface Legacy {
   legacyId: number;
-  legacyType: number;
+  legacyType: LegacyType;
   openDate: Date;
   published: boolean;
 }
