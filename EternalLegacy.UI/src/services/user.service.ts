@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */ //REMOVE AFTER IMPLEMENTATION
 
-import axios from "axios";
 import { mockUser, mockUserRole } from "./mockData";
 import { IUserRole } from "../models/userRole";
 import { IUser } from "../models/user";
