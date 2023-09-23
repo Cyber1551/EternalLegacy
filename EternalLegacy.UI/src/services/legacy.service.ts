@@ -4,7 +4,7 @@ import { ILegacy } from "../models/legacy";
 import { ILegacyContent } from "../models/legacyContent";
 
 // LEGACY -------------------------------
-export const getLegacies = async (userEmail: number): Promise<Array<ILegacy>> => {
+export const getLegacies = async (userEmail: string): Promise<Array<ILegacy>> => {
   // return axios.get('URL HERE');
   return mockLegacy;
 };
