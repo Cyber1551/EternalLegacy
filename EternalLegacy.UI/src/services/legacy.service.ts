@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */ //REMOVE AFTER IMPLEMENTATION
+import axios from "axios";
 import {
   mockLegacies,
   mockLegacyContent1,
