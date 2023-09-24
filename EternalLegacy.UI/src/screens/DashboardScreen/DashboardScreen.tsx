@@ -1,7 +1,5 @@
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import LegacyComponent from "../../components/LegacyComponent";
-import { ILegacy } from "../../models/legacy";
-import { LegacyType } from "../../models/legacyType";
+import LegacyComponent from "../../components/LegacyComponent/LegacyComponent.tsx";
 import LoadingComponent from "../../components/LoadingComponent";
 import {useLegacy} from "../../contexts/LegacyContext.tsx";
 //import {Avatar, Button, Group, Notification, Paper, Text, TypographyStylesProvider} from '@mantine/core';

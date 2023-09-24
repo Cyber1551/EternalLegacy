@@ -96,7 +96,7 @@ const NavBarComponent = () => {
                             <Button onClick={() => {
                                 createLegacy({
                                     legacyId: 0,
-                                    legacyName: legacyName,
+                                    name: legacyName,
                                     legacyType: LegacyType.Presentation,
                                     published: true,
                                     dateType: legacyDateType,

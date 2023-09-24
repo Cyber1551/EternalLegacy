@@ -6,6 +6,6 @@ export interface ILegacy {
   legacyType: LegacyType;
   openDate?: Date;
   published: boolean;
-  legacyName: string;
+  name: string;
   dateType: DateType;
 }
