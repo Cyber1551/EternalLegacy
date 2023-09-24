@@ -33,6 +33,7 @@ namespace EternalLegacy.API.Controllers
         public async Task<IActionResult> CreateNewLegacy([FromBody] Legacy legacy)
         {
             var result = await _legacyRepository.CreateNewLegacy(legacy);
+            await _legacyRepository.CreateUserRole(result.LegacyId);
             return Ok(result);
         }
 

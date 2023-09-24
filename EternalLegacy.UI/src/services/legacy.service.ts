@@ -13,9 +13,10 @@ import { ILegacyContent } from "../models/legacyContent";
 export const getLegacyById = async (
   legacyId: number
 ): Promise<ILegacy | undefined> => {
-  return axios.get(
-    `https://localhost:44364/Legacy/GetLegaciesByLegacyId/${legacyId}`
+  const response = await axios.get(
+    `https://localhost:44364/GetLegaciesByLegacyId/${legacyId}`
   );
+  return response.data;
   //return mockLegacies.find((x) => x.legacyId === legacyId);
 };
 
@@ -30,8 +31,8 @@ export const getLegacyByUserEmail = async (
 };
 
 export const createLegacy = async (legacy: ILegacy): Promise<ILegacy> => {
-  return axios.post(`https://localhost:44364/Legacy/create/legacy`, legacy);
-  return mockLegacies[0];
+  const response = await axios.post(`https://localhost:44364/Create`, legacy);
+  return response.data;
 };
 
 export const updateLegacy = async (legacy: ILegacy): Promise<ILegacy> => {
@@ -49,21 +50,21 @@ export const addLegacyContent = async (
   legacyContent: ILegacyContent
 ): Promise<ILegacyContent> => {
   // actual axios FIGURE OUT HOW
-  return axios.post(
-    `https://localhost:44364/Legacy/content/legacyContent`,
+  const response = await axios.post(
+    `https://localhost:44364/Content`,
     legacyContent
   );
-  return mockLegacyContent1;
+  return response.data;
 };
 
 export const getLegacyContentForLegacy = async (
   legacyId: number
 ): Promise<ILegacyContent[]> => {
   // actual axios
-  return axios.get(
-    `https://localhost:44364/Legacy/GetLegacyContentByLegacyId/${legacyId}`
+  const response = await axios.get(
+    `https://localhost:44364/GetLegacyContentByLegacyId/${legacyId}`
   );
-  return [mockLegacyContent1, mockLegacyContent2];
+  return response.data;
 };
 
 export const updateLegacyContent = async (

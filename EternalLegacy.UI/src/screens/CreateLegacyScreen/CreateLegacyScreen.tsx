@@ -7,6 +7,8 @@ import {useParams} from "react-router-dom";
 import {ContentType} from "../../models/contentType.ts";
 import {ILegacyContent} from "../../models/legacyContent.ts";
 import {IconCheck} from "@tabler/icons-react";
+import { addLegacyContent } from "../../services/legacy.service.ts";
+import { uploadLegacyContent } from "../../services/pinata.service.ts";
 
 const CreateLegacyScreen = () => {
 
@@ -22,17 +24,11 @@ const CreateLegacyScreen = () => {
     }
     const submit = () => {
         if (isValidId(id)) {
-            const upload: ILegacyContent = {
-                legacyContentId: 0,
-                legacyId: Number(id),
-                caption: caption,
-                date: selectedDate || new Date(),
-                contentType: contentType,
-                order: 0,
-                contentID: ""
-            }
-            console.log(upload);
-            setSuccess(true);
+
+            uploadLegacyContent(file, caption, selectedDate ?? new Date(), contentType, Number(id), 1).then(x => {
+                setSuccess(true);
+
+            })
 
             setFile(null);
             setCaption("");

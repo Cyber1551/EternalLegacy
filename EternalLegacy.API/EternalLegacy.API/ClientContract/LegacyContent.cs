@@ -8,8 +8,9 @@ namespace EternalLegacy.API.ClientContract
         public int LegacyId { get; set; }
         public int Order { get; set; }
         public string ContentId { get; set; }
+        public int ContentType { get; set; }
         public string Caption { get; set; }
         public DateType DateType { get; set; }
-        public DateTime CreatedDateTime { get; set; }
+        public DateTime Date { get; set; }
     }
 }

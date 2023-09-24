@@ -16,7 +16,7 @@ const LegacyComponent: FC<ILegacyComponent> = ({ legacy }) => {
     useEffect(() => {
         getLegacyContentForLegacy(legacy.legacyId).then(content => {
             if (content.length > 0) {
-                setImage(`https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${content[0]?.contentID}`);
+                setImage(`https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${content[0]?.contentId}`);
             }
             else {
                 setImage("")
@@ -30,7 +30,7 @@ const LegacyComponent: FC<ILegacyComponent> = ({ legacy }) => {
         <>
             <div style={{ display: "flex", margin: '20px', gap: 10, alignItems: 'center' }} >
                 <img style={{ maxWidth: 120, height: 120, borderStyle: 'solid', flex: 1 }} src={image} onClick={() => navigate(`/${legacy.legacyId}`)}/>
-                <div className='legacyComponentFont' style={{ flex: 5 }}>{legacy.nameS}</div>
+                <div className='legacyComponentFont' style={{ flex: 5 }}>{legacy.name}</div>
                 {/*<div className='legacyComponentFont' style={{ flex: 5 }}>{legacy.}</div>*/}
 
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'row', gap: 10, maxWidth: 100, justifyContent: 'space-around' }}>
