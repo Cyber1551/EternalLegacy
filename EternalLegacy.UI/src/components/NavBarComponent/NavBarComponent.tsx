@@ -74,7 +74,7 @@ const NavBarComponent = () => {
                             title="New Legacy"
                         >
                             <br />
-                            <TextInput placeholder={"Legacy Name..."}/>
+                            <TextInput placeholder={"Legacy Name..."} value={legacyName} onChange={(e) => setLegacyName(e.target.value)}/>
                             <br />
                             <Textarea placeholder={"Description..."} />
                             <br />
@@ -96,7 +96,7 @@ const NavBarComponent = () => {
                             <Button onClick={() => {
                                 createLegacy({
                                     legacyId: 0,
-                                    legacyName: legacyName,
+                                    name: legacyName,
                                     legacyType: LegacyType.Presentation,
                                     published: true,
                                     dateType: legacyDateType,

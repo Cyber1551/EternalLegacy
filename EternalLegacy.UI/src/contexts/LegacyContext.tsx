@@ -11,6 +11,7 @@ export interface ILegacyContext {
     viewingLegacy: ILegacy | undefined,
     changeViewingLegacy: (id: number) => void;
     onLegacyContentClick: (index: number) => void;
+    refreshList: () => void;
 }
 
 const LegacyContext = createContext<ILegacyContext>({
@@ -19,7 +20,8 @@ const LegacyContext = createContext<ILegacyContext>({
     currentLegacyContentIndex: 0,
     viewingLegacy: undefined,
     changeViewingLegacy: () => {},
-    onLegacyContentClick: () => {}
+    onLegacyContentClick: () => {},
+    refreshList: () => {}
 });
 
 export const LegacyProvider = (props: {children: ReactElement}) => {
@@ -30,15 +32,25 @@ export const LegacyProvider = (props: {children: ReactElement}) => {
     const [viewingLegacy, setViewingLegacy] = useState<ILegacy | undefined>(undefined)
     const [currentLegacyContentIndex, setCurrentLegacyContentIndex] = useState<number>(0);
 
-
     useEffect(() => {
         if (user && user.email) {
             getLegacyByUserEmail(user.email).then(leg => {
+                console.log(leg)
                 setLegacies(leg ?? []);
                 console.log(leg);
             })
         }
     }, [user]);
+
+    const refreshList = () => {
+        if (user && user.email) {
+            getLegacyByUserEmail(user.email).then(leg => {
+                console.log(leg)
+                setLegacies(leg ?? []);
+                console.log(leg);
+            })
+        }
+    }
 
     useEffect(() => {
         if (viewingLegacy) {
@@ -65,7 +77,8 @@ export const LegacyProvider = (props: {children: ReactElement}) => {
         viewingLegacy,
         currentLegacyContentIndex,
         changeViewingLegacy,
-        onLegacyContentClick
+        onLegacyContentClick,
+        refreshList
     }}>
         {props.children}
     </LegacyContext.Provider>

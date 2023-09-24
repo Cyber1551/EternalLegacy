@@ -1,4 +1,4 @@
 export enum ContentType {
-    image,
-    video
+  image = 1,
+  video = 2,
 }

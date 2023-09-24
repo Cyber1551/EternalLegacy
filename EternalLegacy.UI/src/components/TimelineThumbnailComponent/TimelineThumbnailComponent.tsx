@@ -15,7 +15,7 @@ const TimelineThumbnailComponent:FC<ITimelineThumbnailComponent> = ({legacyConte
 
     return <Image className={'timelineThumbnailComponent'}
                   src={legacyContent.contentType === ContentType.image ?
-                      `https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${legacyContent.contentID}`
+                      `https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${legacyContent.contentId}`
                         : play}
                   width={85}
                   height={85}

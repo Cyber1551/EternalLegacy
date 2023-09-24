@@ -27,7 +27,10 @@ const TimelineComponent = () => {
             const date = new Date(cur.date);
             let title: string;
             const day = date.getDate();
+            console.log("YO " + dateType)
             switch (dateType) {
+                case DateType.neither:
+                    break
                 case DateType.year:
                     title = date.getFullYear().toString();
                     break;
@@ -56,7 +59,7 @@ const TimelineComponent = () => {
 
     useEffect(() => {
         if (viewingLegacy) {
-            console.log(viewingLegacy.dateType)
+
             const groups = groupBy(viewingLegacyContent, viewingLegacy.dateType);
             console.log(groups)
             setFormattedContent(groups);

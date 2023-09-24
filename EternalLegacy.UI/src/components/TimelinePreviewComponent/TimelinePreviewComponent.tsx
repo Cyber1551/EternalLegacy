@@ -10,11 +10,11 @@ const TimelinePreviewComponent = () => {
     if(viewingLegacyContent.length === 0) return <>No Content</>
 
     return <div className={'timelinePreviewComponent'}>
-        <Center><h2>{viewingLegacy?.legacyName}</h2>   </Center>
+        <Center><h2>{viewingLegacy?.name}</h2>   </Center>
         <Center>
-        {viewingLegacyContent[currentLegacyContentIndex].contentType === ContentType.image ? <Image style={{marginTop: 10}} height={500} fit={'contain'} src={`https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${viewingLegacyContent[currentLegacyContentIndex]?.contentID}`} />
+        {viewingLegacyContent[currentLegacyContentIndex]?.contentType === ContentType.image ? <Image style={{marginTop: 10}} height={500} fit={'contain'} src={`https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${viewingLegacyContent[currentLegacyContentIndex]?.contentId}`} />
         :   <video height={500} controls>
-                <source src={`https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${viewingLegacyContent[currentLegacyContentIndex]?.contentID}`} type="video/mp4" />
+                <source src={`https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${viewingLegacyContent[currentLegacyContentIndex]?.contentId}`} type="video/mp4" />
             </video>}
         </Center>
         <br />
