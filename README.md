@@ -15,8 +15,8 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 *List the full names, email address & Github username of your teammates*
 
 1.   **Brandon Lacy**  || **brandon.lacy@kiewit.com** || **Cyber1551**
-2.   **Justin Morrow**  || **justin.morrow@kiewit.com** || **Cyber1551**
-3.   **Jordon Trujillo**  || **brandon.lacy@kiewit.com** || **Cyber1551**
+2.   **Justin Morrow**  || **justin.morrow@kiewit.com** || **jmorrow10**
+3.   **Jordon Trujillo**  || **brandon.lacy@kiewit.com** || **jojotrujillo**
 4.   **Aruvel Kumarasamy **  || **arulvel.kumarasamy@kiewit.com** || **arulvelkumarasamy**
 5.   **Ravi Dixit**  || **ravi.dixit@kiewit.com** || **rvdxt**
 
@@ -25,9 +25,11 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 
 ## What is the name of your App?
 
+Eternal Legacy
 <br /><br />
 ## What does your app do?
 *Describe in a paragraph or so*
+The app allows you to upload images and video and store them on the blockchain to later view in a timeline format. This app is targeted at people who want to preserve an Eternal Legacy for an event or for someone who has passed away. The app can also allow you to create a timecapsule of media that will only be accessible at a later date. 
 
 <br /><br />
 
