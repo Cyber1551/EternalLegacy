@@ -28,7 +28,7 @@ export const getLegacyByUserEmail = async (
 };
 
 export const createLegacy = async (legacy: ILegacy): Promise<ILegacy> => {
-  // actual axios FIGURE OUT HOW
+  return axios.post(`https://localhost:44364/Legacy/create/legacy`, legacy);
   return mockLegacies[0];
 };
 
@@ -44,16 +44,13 @@ export const removeLegacy = async (legacyId: number): Promise<boolean> => {
 
 // LEGACY CONTENT -----------------------
 export const addLegacyContent = async (
-  content: ILegacyContent
+  legacyContent: ILegacyContent
 ): Promise<ILegacyContent> => {
-  // actual axios
-  return mockLegacyContent1;
-};
-
-export const updateLegacyContent = async (
-  content: ILegacyContent
-): Promise<ILegacyContent> => {
-  // actual axios
+  // actual axios FIGURE OUT HOW
+  return axios.post(
+    `https://localhost:44364/Legacy/content/legacyContent`,
+    legacyContent
+  );
   return mockLegacyContent1;
 };
 
@@ -61,7 +58,17 @@ export const getLegacyContentForLegacy = async (
   legacyId: number
 ): Promise<ILegacyContent[]> => {
   // actual axios
-  return [mockLegacyContent1, mockLegacyContent2, mockLegacyContent3];
+  return axios.get(
+    `https://localhost:44364/Legacy/GetLegacyContentByLegacyId/${legacyId}`
+  );
+  return [mockLegacyContent1, mockLegacyContent2];
+};
+
+export const updateLegacyContent = async (
+  content: ILegacyContent
+): Promise<ILegacyContent> => {
+  // actual axios
+  return mockLegacyContent1;
 };
 
 export const removeLegacyContent = async (

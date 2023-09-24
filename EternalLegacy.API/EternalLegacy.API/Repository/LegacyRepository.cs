@@ -214,6 +214,58 @@ namespace EternalLegacy.API.Repository
                 }
             });
         }
+
+        public async Task<LegacyContent> CreateNewLegacyContent(LegacyContent input)
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    var legacyContent = new List<LegacyContent>();
+                    DataSet ds = new DataSet();
+                    string connectionString = _configuration["Databases:EternalLegacyConnection:ConnectionString"]; ;
+
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.Connection = con;
+                            cmd.CommandType = CommandType.Text;
+                            //TODO : Change GetDistrictCodeName to include Code and Name Separately
+                            cmd.CommandText = $"INSERT INTO LegacyContent ([LegacyContentId] ,[LegacyId] ,[ContentOrder] ,[ContentId] ,[Caption] ,[Date] ,[DateType]) VALUES (<LegacyContentId, {input.LegacyContentId},> ,<LegacyId, {input.LegacyId},> ,<ContentOrder, {input.Order},> ,<ContentId, {input.ContentId},> ,<Caption, {input.Caption},> ,<Date, {input.CreatedDateTime},> ,<DateType, {input.DateType},>);";
+                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                            adapter.Fill(ds);
+                        }
+                    }
+
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        int legacyId = Int32.Parse(row["LegacyId"].ToString());
+                        int legacyContentId = Int32.Parse(row["LegacyContentId"].ToString());
+                        int contentOrder = Int32.Parse(row["ContentOrder"].ToString());
+                        string contentId = row["ContentId"].ToString();
+                        string caption = row["Caption"].ToString();
+                        DateTime date = DateTime.Parse(row["Date"].ToString());
+                        int dateType = Int32.Parse(row["DateType"].ToString());
+                        legacyContent.Add(new LegacyContent()
+                        {
+                            LegacyContentId = legacyContentId,
+                            LegacyId = legacyId,
+                            Order = contentOrder,
+                            ContentId = contentId,
+                            Caption = caption,
+                            CreatedDateTime = date,
+                            DateType = Common.DateType.Time, //CHANGE LATER
+                        });
+                    }
+                    return legacyContent.First();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            });
+        }
     }
 }
 
