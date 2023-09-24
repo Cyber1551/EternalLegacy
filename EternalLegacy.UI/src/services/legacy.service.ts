@@ -3,7 +3,8 @@ import axios from "axios";
 import {
   mockLegacies,
   mockLegacyContent1,
-  mockLegacyContent2, mockLegacyContent3,
+  mockLegacyContent2,
+  mockLegacyContent3,
 } from "./mockData";
 import { ILegacy } from "../models/legacy";
 import { ILegacyContent } from "../models/legacyContent";
@@ -21,9 +22,10 @@ export const getLegacyById = async (
 export const getLegacyByUserEmail = async (
   userEmail: string
 ): Promise<Array<ILegacy> | undefined> => {
-  return axios.get(
-    `https://localhost:44364/Legacy/GetLegaciesByUserId/${userEmail}`
+  const response = await axios.get(
+    `https://localhost:44364/GetLegaciesByUserEmail/${userEmail}`
   );
+  return response.data;
   //return mockLegacies.find((x) => x.legacyId === legacyId);
 };
 

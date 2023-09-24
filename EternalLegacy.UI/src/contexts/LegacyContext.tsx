@@ -34,6 +34,7 @@ export const LegacyProvider = (props: {children: ReactElement}) => {
     useEffect(() => {
         if (user && user.email) {
             getLegacyByUserEmail(user.email).then(leg => {
+                console.log(leg)
                 setLegacies(leg ?? []);
                 console.log(leg);
             })
