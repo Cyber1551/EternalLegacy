@@ -1,7 +1,7 @@
 import {ILegacy} from "../models/legacy.ts";
 import {createContext, ReactElement, useContext, useEffect, useState} from "react";
 import {useAuth0} from "@auth0/auth0-react";
-import {getLegacies, getLegacyById, getLegacyContentForLegacy} from "../services/legacy.service.ts";
+import {getLegacyById, getLegacyByUserEmail, getLegacyContentForLegacy} from "../services/legacy.service.ts";
 import {ILegacyContent} from "../models/legacyContent.ts";
 
 export interface ILegacyContext {
@@ -33,8 +33,8 @@ export const LegacyProvider = (props: {children: ReactElement}) => {
 
     useEffect(() => {
         if (user && user.email) {
-            getLegacies(user.email).then(leg => {
-                setLegacies(leg);
+            getLegacyByUserEmail(user.email).then(leg => {
+                setLegacies(leg ?? []);
                 console.log(leg);
             })
         }

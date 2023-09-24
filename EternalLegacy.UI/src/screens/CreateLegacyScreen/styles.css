@@ -1,0 +1,15 @@
+.datePicker {
+    border: 1px solid #373A40;
+    outline: none;
+    width: 500px;
+    height: 36px;
+    background-color: #25262b;
+    border-radius: 4px;
+    color: #C1C2C5;
+    font-size: 14px;
+    padding-left: 12px;
+}
+
+.datePicker:focus {
+    border: 1px solid #1971C2;
+}

@@ -1,3 +1,5 @@
+import {ContentType} from "./contentType.ts";
+
 export interface ILegacyContent {
   legacyContentId: number;
   legacyId: number;
@@ -5,4 +7,5 @@ export interface ILegacyContent {
   contentID: string;
   caption: string;
   date: Date;
+  contentType: ContentType;
 }
