@@ -3,6 +3,7 @@ import {DateType} from "./dateType.ts";
 
 export interface ILegacy {
   legacyId: number;
+  name: string;
   legacyType: LegacyType;
   openDate?: Date;
   published: boolean;
