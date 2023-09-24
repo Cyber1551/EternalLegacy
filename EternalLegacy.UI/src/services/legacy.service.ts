@@ -3,7 +3,7 @@ import axios from "axios";
 import {
   mockLegacies,
   mockLegacyContent1,
-  mockLegacyContent2,
+  mockLegacyContent2, mockLegacyContent3,
 } from "./mockData";
 import { ILegacy } from "../models/legacy";
 import { ILegacyContent } from "../models/legacyContent";

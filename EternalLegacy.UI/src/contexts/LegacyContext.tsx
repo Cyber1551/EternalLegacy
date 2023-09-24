@@ -6,16 +6,20 @@ import {ILegacyContent} from "../models/legacyContent.ts";
 
 export interface ILegacyContext {
     legacies: Array<ILegacy>,
-    viewingLegacyContent: Array<ILegacyContent>
+    viewingLegacyContent: Array<ILegacyContent>,
+    currentLegacyContentIndex: number,
     viewingLegacy: ILegacy | undefined,
     changeViewingLegacy: (id: number) => void;
+    onLegacyContentClick: (index: number) => void;
 }
 
 const LegacyContext = createContext<ILegacyContext>({
     legacies: [],
     viewingLegacyContent: [],
+    currentLegacyContentIndex: 0,
     viewingLegacy: undefined,
-    changeViewingLegacy: () => {}
+    changeViewingLegacy: () => {},
+    onLegacyContentClick: () => {}
 });
 
 export const LegacyProvider = (props: {children: ReactElement}) => {
@@ -24,7 +28,7 @@ export const LegacyProvider = (props: {children: ReactElement}) => {
     const [legacies, setLegacies] = useState<Array<ILegacy>>([]);
     const [viewingLegacyContent, setViewingLegacyContent] = useState<Array<ILegacyContent>>([]);
     const [viewingLegacy, setViewingLegacy] = useState<ILegacy | undefined>(undefined)
-
+    const [currentLegacyContentIndex, setCurrentLegacyContentIndex] = useState<number>(0);
 
 
     useEffect(() => {
@@ -40,7 +44,7 @@ export const LegacyProvider = (props: {children: ReactElement}) => {
         if (viewingLegacy) {
             getLegacyContentForLegacy(viewingLegacy.legacyId).then(content => {
                 setViewingLegacyContent(content)
-            })
+            });
         }
     }, [viewingLegacy]);
 
@@ -49,14 +53,19 @@ export const LegacyProvider = (props: {children: ReactElement}) => {
             console.log(leg)
             setViewingLegacy(leg)
         })
+    }
 
+    const onLegacyContentClick = (index: number) => {
+        setCurrentLegacyContentIndex(index);
     }
 
     return <LegacyContext.Provider value={{
         legacies,
         viewingLegacyContent,
         viewingLegacy,
-        changeViewingLegacy
+        currentLegacyContentIndex,
+        changeViewingLegacy,
+        onLegacyContentClick
     }}>
         {props.children}
     </LegacyContext.Provider>

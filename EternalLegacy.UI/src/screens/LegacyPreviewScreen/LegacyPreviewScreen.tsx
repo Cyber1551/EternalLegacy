@@ -2,14 +2,12 @@ import {useParams} from "react-router-dom";
 import {useLegacy} from "../../contexts/LegacyContext.tsx";
 import {useEffect} from "react";
 import TimelineComponent from "../../components/TimelineComponent";
-import TimelinePreviewComponent from "../../components/ TimelinePreviewComponent";
 import './styles.css';
+import TimelinePreviewComponent from "../../components/TimelinePreviewComponent";
 
 const LegacyPreviewScreen = () => {
     const {id} = useParams();
     const {viewingLegacy, changeViewingLegacy} = useLegacy();
-
-
 
     const isValidId = (strId: string | undefined) => {
         if (strId === undefined) return false;

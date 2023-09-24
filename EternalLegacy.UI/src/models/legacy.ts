@@ -1,4 +1,5 @@
 import { LegacyType } from "./legacyType";
+import {DateType} from "./dateType.ts";
 
 export interface ILegacy {
   legacyId: number;
@@ -6,4 +7,6 @@ export interface ILegacy {
   legacyType: LegacyType;
   openDate?: Date;
   published: boolean;
+  legacyName: string;
+  dateType: DateType;
 }
