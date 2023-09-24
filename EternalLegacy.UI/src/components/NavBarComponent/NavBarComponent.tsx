@@ -11,8 +11,6 @@ import useStyles from "./styles.ts";
 import {IconMoonStars, IconSun} from "@tabler/icons-react";
 import {useDisclosure} from "@mantine/hooks";
 import UserMenuComponent from "../UserMenuComponent";
-import {useLegacy} from "../../contexts/LegacyContext.tsx";
-
 
 const NavBarComponent = () => {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
