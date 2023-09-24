@@ -1,28 +1,40 @@
 ﻿using EternalLegacy.API.ClientContract;
+using EternalLegacy.API.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EternalLegacy.API.Controllers
 {
     public class UserController : Controller
     {
-        [HttpGet("GetUser/{id}")]
-        public IActionResult GetUser(int id)
+        public IConfiguration _configuration { get; }
+        public UserRepository _userRepository { get; set; }
+
+        public UserController(IConfiguration configuration)
         {
-            // Fetches the user and roles associated with the user
-            throw new NotImplementedException();
-        }
-        [HttpGet("GetUserByEmail/{email}")]
-        public IActionResult GetUserByEmail(string  email)
-        {
-            // Fetches the user and roles associated with the user
-            throw new NotImplementedException();
+            _configuration = configuration;
+            _userRepository = new UserRepository(configuration);
         }
 
         [HttpPost("CreateUser")]
-        public IActionResult CreateUser([FromBody]User user)
+        public async Task<IActionResult> CreateUser([FromBody] User user)
         {
             user.CreatedDate = DateTime.Now;
-            throw new NotImplementedException();
+            var result = await _userRepository.CreateUser(user);
+            return Ok(result);
+        }
+        [HttpGet("GetUserByEmail/{email}")]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            // Fetches the user and roles associated with the user
+            var result = await _userRepository.GetUserByEmail(email);
+            return Ok(result);
+        }
+        [HttpGet("GetUser/{id}")]
+        public async  Task<IActionResult> GetUser(int id)
+        {
+            // Fetches the user and roles associated with the user
+            var result = await _userRepository.GetUserByUserId(id);
+            return Ok(result);
         }
 
         [HttpDelete("DeleteUser")]
