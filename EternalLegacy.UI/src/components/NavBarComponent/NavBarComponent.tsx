@@ -1,19 +1,22 @@
 import {useAuth0} from "@auth0/auth0-react";
 import {
     ActionIcon,
-    Box, Burger, Button,
+    Box, Burger, Button, Center,
     Group,
     Header,
+    Text,
     useMantineColorScheme
 } from "@mantine/core";
 import useStyles from "./styles.ts";
 import {IconMoonStars, IconSun} from "@tabler/icons-react";
 import {useDisclosure} from "@mantine/hooks";
 import UserMenuComponent from "../UserMenuComponent";
+import {useLegacy} from "../../contexts/LegacyContext.tsx";
 
 
 const NavBarComponent = () => {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+    const {viewingLegacy} = useLegacy();
     const [drawerOpened, { toggle: toggleDrawer }] = useDisclosure(false);
     const {
         isAuthenticated,
@@ -25,7 +28,7 @@ const NavBarComponent = () => {
     return (
         <Header height={60} px="md">
             <Group position="apart" sx={{ height: '100%' }}>
-                <Box>
+                <Group>
                     <ActionIcon
                         onClick={() => toggleColorScheme()}
                         size="lg"
@@ -37,7 +40,8 @@ const NavBarComponent = () => {
                     >
                         {colorScheme === 'dark' ? <IconSun size={18} /> : <IconMoonStars size={18} />}
                     </ActionIcon>
-                </Box>
+                    <Text style={{fontWeight: 'bold', fontSize: 25}}>ETERNAL LEGACY</Text>
+                </Group>
 
                 <Group className={classes.hiddenMobile}>
                     {!isAuthenticated && <Button onClick={() => loginWithRedirect({

@@ -2,7 +2,7 @@
 import {
   mockLegacies,
   mockLegacyContent1,
-  mockLegacyContent2,
+  mockLegacyContent2, mockLegacyContent3,
 } from "./mockData";
 import { ILegacy } from "../models/legacy";
 import { ILegacyContent } from "../models/legacyContent";
@@ -57,7 +57,7 @@ export const getLegacyContentForLegacy = async (
   legacyId: number
 ): Promise<ILegacyContent[]> => {
   // actual axios
-  return [mockLegacyContent1, mockLegacyContent2];
+  return [mockLegacyContent1, mockLegacyContent2, mockLegacyContent3];
 };
 
 export const removeLegacyContent = async (

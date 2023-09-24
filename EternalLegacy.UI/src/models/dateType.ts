@@ -1,6 +1,7 @@
 export enum DateType {
   neither = 1,
-  date = 2,
-  time = 3,
-  both = 4,
+  year = 2,
+  month = 3,
+  day = 4,
+  hour = 5,
 }
