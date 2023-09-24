@@ -130,7 +130,7 @@ namespace EternalLegacy.API.Repository
                             cmd.Connection = con;
                             cmd.CommandType = CommandType.Text;
                             //TODO : Change GetDistrictCodeName to include Code and Name Separately
-                            cmd.CommandText = $"INSERT INTO Legacy([Name],[LegacyType],[OpenDate],[Published])VALUES(<Name, {input.Name},>,<LegacyType, {input.LegacyType},>,<OpenDate, {input.OpenDate},>,<Published, {input.IsPublished},>);";
+                            cmd.CommandText = $"INSERT INTO Legacy([Name],[LegacyType],[OpenDate],[Published])VALUES({input.Name}, {input.LegacyType}, {input.OpenDate}, {input.IsPublished});";
                             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                             adapter.Fill(ds);
                         }
@@ -232,7 +232,7 @@ namespace EternalLegacy.API.Repository
                             cmd.Connection = con;
                             cmd.CommandType = CommandType.Text;
                             //TODO : Change GetDistrictCodeName to include Code and Name Separately
-                            cmd.CommandText = $"INSERT INTO LegacyContent ([LegacyContentId] ,[LegacyId] ,[ContentOrder] ,[ContentId] ,[Caption] ,[Date] ,[DateType]) VALUES (<LegacyContentId, {input.LegacyContentId},> ,<LegacyId, {input.LegacyId},> ,<ContentOrder, {input.Order},> ,<ContentId, {input.ContentId},> ,<Caption, {input.Caption},> ,<Date, {input.CreatedDateTime},> ,<DateType, {input.DateType},>);";
+                            cmd.CommandText = $"INSERT INTO LegacyContent ([LegacyContentId] ,[LegacyId] ,[ContentOrder] ,[ContentId] ,[Caption] ,[Date] ,[DateType]) VALUES ({input.LegacyContentId}, {input.LegacyId}, {input.Order}, {input.ContentId}, {input.Caption}, {input.CreatedDateTime}, {input.DateType});";
                             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                             adapter.Fill(ds);
                         }
