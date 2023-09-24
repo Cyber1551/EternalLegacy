@@ -78,7 +78,7 @@ const NavBarComponent = () => {
                             <br />
                             <Textarea placeholder={"Description..."} />
                             <br />
-                            <Select style={{flex: 1}} data={["Nothing", "Year", "Month", "Day"]} onChange={(e) => {
+                            <Select style={{flex: 1}} data={["Nothing", "Year", "Month", "Day", "Hour"]} onChange={(e) => {
                                 switch(e) {
                                     case 'Year':
                                         setLegacyDateType(DateType.year);

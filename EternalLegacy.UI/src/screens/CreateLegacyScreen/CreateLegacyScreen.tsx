@@ -27,8 +27,10 @@ const CreateLegacyScreen = () => {
 
             uploadLegacyContent(file, caption, selectedDate ?? new Date(), contentType, Number(id), 1).then(x => {
                 setSuccess(true);
-
-            })
+                setTimeout(() => {
+                    setSuccess(false)
+                }, 2000)
+            });
 
             setFile(null);
             setCaption("");
