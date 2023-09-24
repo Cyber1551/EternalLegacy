@@ -11,9 +11,15 @@ namespace EternalLegacy.API.Controllers
             // Fetches the user and roles associated with the user
             throw new NotImplementedException();
         }
+        [HttpGet("GetUserByEmail/{email}")]
+        public IActionResult GetUserByEmail(string  email)
+        {
+            // Fetches the user and roles associated with the user
+            throw new NotImplementedException();
+        }
 
-        [HttpPost("RegisterUser")]
-        public IActionResult RegisterUser(User user)
+        [HttpPost("CreateUser")]
+        public IActionResult CreateUser([FromBody]User user)
         {
             user.CreatedDate = DateTime.Now;
             throw new NotImplementedException();
