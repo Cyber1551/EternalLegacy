@@ -18,8 +18,8 @@ namespace EternalLegacy.API.Controllers
             throw new NotImplementedException();
         }
 
-        [HttpPost("RegisterUser")]
-        public IActionResult RegisterUser(User user)
+        [HttpPost("CreateUser")]
+        public IActionResult CreateUser([FromBody]User user)
         {
             user.CreatedDate = DateTime.Now;
             throw new NotImplementedException();
