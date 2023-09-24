@@ -1,7 +1,7 @@
 import {useAuth0} from "@auth0/auth0-react";
 import {
     ActionIcon,
-    Box, Burger, Button, Center,
+    Burger, Button,
     Group,
     Header,
     Text,
@@ -16,7 +16,6 @@ import {useLegacy} from "../../contexts/LegacyContext.tsx";
 
 const NavBarComponent = () => {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-    const {viewingLegacy} = useLegacy();
     const [drawerOpened, { toggle: toggleDrawer }] = useDisclosure(false);
     const {
         isAuthenticated,
