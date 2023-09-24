@@ -5,6 +5,7 @@ import {LegacyType} from "../models/legacyType";
 import {RoleType} from "../models/roleType";
 import {IUser} from "../models/user";
 import {IUserRole} from "../models/userRole";
+import {ContentType} from "../models/contentType.ts";
 
 //MOCK DATA
 export const mockUser: IUser = {
@@ -59,6 +60,7 @@ export const mockLegacyContent1: ILegacyContent = {
   contentID: "QmXPxfPrAnfFgVYQAd9gEUroNLEWny53UMVMDaAi5DU5VG",
   caption: "He looks mad",
   date: new Date("2023-08-25T11:00:00"),
+  contentType: ContentType.image
 };
 
 export const mockLegacyContent2: ILegacyContent = {
@@ -68,13 +70,15 @@ export const mockLegacyContent2: ILegacyContent = {
   contentID: "QmR5uZMmt6rzsyW4iyHjFSb8ieUqqrWJWz7ea2iA6pBV1M",
   caption: "Yikes look at those lines",
   date: new Date("2025-09-25T11:00:00"),
+  contentType: ContentType.image
 };
 
 export const mockLegacyContent3: ILegacyContent = {
   legacyContentId: 3,
   legacyId: 1,
   order: 3,
-  contentID: "QmYmUzdZ8nEQ92uPe1RnNqYW8vihy512N8rqKP9AypgmCM",
+  contentID: "Qmd3StA6tojJ6RJzgH82zSWf2dS2rRY1t8BRZFV4HtZncV",
   caption: "Justine Justine AHHHH",
   date: new Date("2025-09-25T11:00:00"),
+  contentType: ContentType.video
 };
