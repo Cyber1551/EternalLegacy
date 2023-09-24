@@ -19,7 +19,7 @@ export const mockLegacies: Array<ILegacy> = [
     name: "legacy with content",
     legacyType: LegacyType.Presentation,
     published: true,
-    legacyName: "Legacy one",
+    name: "Legacy one",
     dateType: DateType.year
   },
   {
@@ -27,21 +27,21 @@ export const mockLegacies: Array<ILegacy> = [
     name: "legacy without content",
     legacyType: LegacyType.Memorium,
     published: false,
-    legacyName: "Legacy two",
+    name: "Legacy two",
     dateType: DateType.month
   },
   {
     legacyId: 3,
     legacyType: LegacyType.Memorium,
     published: false,
-    legacyName: "Legacy three",
+    name: "Legacy three",
     dateType: DateType.day
   },
   {
     legacyId: 4,
     legacyType: LegacyType.Memorium,
     published: false,
-    legacyName: "Legacy four",
+    name: "Legacy four",
     dateType: DateType.hour
   },
 ];
