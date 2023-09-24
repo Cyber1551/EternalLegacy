@@ -129,32 +129,20 @@ namespace EternalLegacy.API.Repository
                         {
                             cmd.Connection = con;
                             cmd.CommandType = CommandType.Text;
-                            //TODO : Change GetDistrictCodeName to include Code and Name Separately
-                            cmd.CommandText = $"INSERT INTO Legacy([Name],[LegacyType],[OpenDate],[Published])VALUES(<Name, {input.Name},>,<LegacyType, {input.LegacyType},>,<OpenDate, {input.OpenDate},>,<Published, {input.IsPublished},>);";
-                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                            adapter.Fill(ds);
+                           
+                            cmd.CommandText = $"INSERT INTO Legacy([Name],[LegacyType],[OpenDate],[Published])VALUES(@Name,@LegacyType,@OpenDate,@Published); SELECT SCOPE_IDENTITY() ";
+                            cmd.Parameters.AddWithValue("@Name", input.Name);
+                            cmd.Parameters.AddWithValue("@LegacyType", input.LegacyType);
+                            cmd.Parameters.AddWithValue("@OpenDate", input.OpenDate);
+                            cmd.Parameters.AddWithValue("@Published", input.IsPublished);
+                            
+                            var legacyIdCreated = (int) cmd.ExecuteScalar();
+                           input.LegacyId = legacyIdCreated;
+
+                           return input;
                         }
                     }
-
-                    foreach (DataRow row in ds.Tables[0].Rows)
-                    {
-                        int legacyId = Int32.Parse(row["LegacyId"].ToString());
-                        string name = row["Name"].ToString();
-                        int legacyType = Int32.Parse(row["LegacyType"].ToString());
-                        DateTime openDate = DateTime.Parse(row["OpenDate"].ToString());
-                        bool isPublished = row["Published"].ToString() == "1";
-                        legacies.Add(new Legacy()
-                        {
-                            LegacyId = legacyId,
-                            Name = name,
-                            OpenDate = openDate,
-                            IsPublished = isPublished,
-                            LegacyType = Common.LegacyType.Memorium,
-
-
-                        });
-                    }
-                    return legacies.First();
+                    
                 }
                 catch (Exception)
                 {
