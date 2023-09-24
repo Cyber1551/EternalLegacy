@@ -3,6 +3,8 @@ import {ILegacyContent} from "../../models/legacyContent.ts";
 import {FC} from "react";
 import './style.css'
 import {useLegacy} from "../../contexts/LegacyContext.tsx";
+import {ContentType} from "../../models/contentType.ts";
+import play from '../../assets/play.png';
 
 export interface ITimelineThumbnailComponent {
     legacyContent: ILegacyContent;
@@ -12,7 +14,9 @@ const TimelineThumbnailComponent:FC<ITimelineThumbnailComponent> = ({legacyConte
     const {onLegacyContentClick, currentLegacyContentIndex} = useLegacy();
 
     return <Image className={'timelineThumbnailComponent'}
-                  src={`https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${legacyContent.contentID}`}
+                  src={legacyContent.contentType === ContentType.image ?
+                      `https://lavender-ambitious-fish-346.mypinata.cloud/ipfs/${legacyContent.contentId}`
+                        : play}
                   width={85}
                   height={85}
                   style={{marginLeft: currentLegacyContentIndex === index ? 40 : "auto"}}

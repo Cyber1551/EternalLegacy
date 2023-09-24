@@ -7,6 +7,7 @@ namespace EternalLegacy.API.ClientContract
         public int LegacyId { get; set; }
         public string Name { get; set; }
         public LegacyType LegacyType { get; set; }
+        public int DateType { get; set; }
         public bool IsPublished { get; set; }
         public DateTime? OpenDate { get; set; }
     }

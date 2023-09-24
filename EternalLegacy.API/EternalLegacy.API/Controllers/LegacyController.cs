@@ -33,6 +33,7 @@ namespace EternalLegacy.API.Controllers
         public async Task<IActionResult> CreateNewLegacy([FromBody] Legacy legacy)
         {
             var result = await _legacyRepository.CreateNewLegacy(legacy);
+            await _legacyRepository.CreateUserRole(result.LegacyId);
             return Ok(result);
         }
 
@@ -43,7 +44,12 @@ namespace EternalLegacy.API.Controllers
             return Ok(result);
         }
 
-
+        [HttpPost("Content")]
+        public async Task<IActionResult> CreateNewLegacyContent([FromBody] LegacyContent legacyContent)
+        {
+            var result = await _legacyRepository.CreateNewLegacyContent(legacyContent);
+            return Ok(result);
+        }
 
     }
 }
