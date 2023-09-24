@@ -43,7 +43,12 @@ namespace EternalLegacy.API.Controllers
             return Ok(result);
         }
 
-
+        [HttpPost("Content")]
+        public async Task<IActionResult> CreateNewLegacyContent([FromBody] LegacyContent legacyContent)
+        {
+            var result = await _legacyRepository.CreateNewLegacyContent(legacyContent);
+            return Ok(result);
+        }
 
     }
 }
